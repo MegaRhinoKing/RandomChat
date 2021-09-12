@@ -9,7 +9,7 @@ const app = express()
 
 app.use(cookieParser())
 
-const port = 3000
+const port = 5001
 const server = app.listen(port, ()=> console.log("Listening on port " + port))
 
 app.use(express.static("public"))
@@ -58,7 +58,7 @@ io.on("connection", function(socket){
     console.log('made socket connection,', socket.id)
 
     let cookief = socket.handshake.headers.cookie; 
-    let cookies = cookie.parse(socket.handshake.headers.cookie);   
+    let cookies = cookie.parse(""+socket.handshake.headers.cookie);   
     let userid = cookies.userid
   
     socket.join(userid)
