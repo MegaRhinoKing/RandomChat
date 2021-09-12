@@ -9,7 +9,8 @@ const app = express()
 
 app.use(cookieParser())
 
-const server = app.listen(5001, ()=> console.log("Listening on port 3000."))
+port = 5001
+const server = app.listen(5001, ()=> console.log("Listening on port " + port))
 
 app.use(express.static("public"))
 

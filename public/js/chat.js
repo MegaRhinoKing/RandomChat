@@ -1,4 +1,6 @@
-const socket = io.connect("http://localhost:3000")
+port = 5001
+
+const socket = io.connect(window.location.protocol + "//" + window.location.host + ":" + window.location.port + "/")
 
 let selfid = undefined
 let strangerid = undefined
