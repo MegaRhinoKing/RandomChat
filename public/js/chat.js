@@ -1,6 +1,6 @@
 port = 5001
 
-const socket = io.connect("http:freshcraft.play.ai:5001/")
+const socket = io.connect(`//${window.location.host}:${window.location.port}/`)
 let selfid = undefined
 let strangerid = undefined
 
