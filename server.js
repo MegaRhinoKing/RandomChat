@@ -21,13 +21,18 @@ let open = []
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + "/templates/homepage.html");
-    
+
+    if (!req.cookies.userid) {
     let id = Math.floor(Math.random() * 100000000000) + 1;
-    res.cookie("userid", id)
+    res.cookie("userid", id)}
   });
  
   app.get("/newchat", (req, res) => {
     res.sendFile(__dirname + "/templates/newchat.html");
+    if (!req.cookies.userid) {
+      let id = Math.floor(Math.random() * 100000000000) + 1;
+      res.cookie("userid", id)
+    }
     let connected = false;
 
     userid = req.cookies.userid
